@@ -1,0 +1,26 @@
+
+
+<div class="flex min-h-screen">
+  <div class="md:block hidden ">
+    <app-sidebar></app-sidebar>
+  </div>
+    <div class="flex-1 p-4">
+      <!-- <div class="text-right">
+        <img src="assets/profile.jpeg" class="h-[3rem] w-[3rem] m-2 rounded-full inline-block"/>
+    </div> -->
+      <app-header></app-header>
+      <div class="flex justify-between md:flex-row flex-col">
+        <h2 class="my-auto md:text-xl lg:text-xl font-bold md:block hidden">Employee Directory</h2>
+     <div class="text-center">
+        <app-search></app-search>
+      </div>
+    </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <app-employee-card
+          *ngFor="let emp of employees"
+          [employee]="emp"
+        ></app-employee-card>
+      </div>
+    </div>
+  </div>

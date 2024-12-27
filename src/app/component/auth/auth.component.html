@@ -1,0 +1,88 @@
+
+<div class=" py-20  w-full h-screen overflow-hidden">
+   
+    <div class="container mx-auto bg-[#E7E7E7] py-5 rounded-lg w-2/3">
+   
+        <!-- <div class="w-full ">
+            <img src="assets/auth.png" class="w-full h-full  block lg:hidden" />
+          </div> -->
+          <div class="my-3">
+            <h2 class="text-center font-bold">Let's Verify Your Email</h2>
+            <p class="text-center">Enter your email address below to receice a verification link. If you don’t see the email check your spam folder.</p>
+          </div>
+
+          <div class="w-full ">
+            <img src="assets/auth.png" class="w-full h-full  block lg:hidden" />
+          </div>
+ 
+          <div
+        class="flex justify-center flex-col  lg:flex-row rounded-lg "
+      >
+      
+        <div class="w-1/2  p-5">
+          <div class="flex flex-col items-center justify-center mb-5">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+           
+             
+            
+            <div class="grid grid-cols-1 my-3 lg:mx-20">
+                <div class="">
+                  <div>
+                    <label class="text-lg ">Enter Email*</label>
+                  </div>
+                  <div class="">
+                    <input type="text" formControlName="email" class="w-full py-2 px-2 rounded-lg text-lg" />
+                  </div>
+                  <div
+                    *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                    style="color: red;"
+                  >
+                   Email is required.
+                  </div>
+                </div>
+              </div>
+                
+                <div class="grid grid-cols-1 my-3 lg:mx-20">
+                <div class="">
+                  <div>
+                    <label class="text-lg">Enter Otp</label>
+                  </div>
+                  <div>
+                    <input type="text" formControlName="password" class="w-full  py-2 px-2 rounded-lg text-lg" />
+                  </div>
+                  <div
+                    *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                    style="color: red;"
+                  >
+                    Last Name is required.
+                  </div>
+                </div>
+    
+              </div>
+  
+            <div class="text-center">
+              <button
+                type="submit"
+                class="rounded-lg bg-teal-500 py-2 px-4 mb-3 text-xl"
+              >
+               Authenticate
+              </button>
+              <!-- <p class="text-lg">Create a New Account <a [routerLink]="['/signup']">Signup</a></p> -->
+            </div>
+  
+          </form>
+        </div>
+        </div>
+
+        <div class="w-2/5">
+          <img src="assets/auth.png" class="w-full h-full  hidden lg:block" />
+        </div>
+
+      </div>
+   
+   
+   
+   
+    </div>
+  </div>
+  

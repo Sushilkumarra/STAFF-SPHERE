@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+input {
+    border: 1px solid #ccc;  /* Custom style for input */
+  }
+  
+  a {
+    text-decoration: underline;
+    color: #1d4ed8;  /* Custom color for links */
+  }

@@ -1,0 +1,160 @@
+
+<div class="py-5 w-full ">
+  <div class="container mx-auto">
+    <div
+      class="flex flex-col lg:flex-row rounded-lg shadow-lg"
+    >
+      <div class="lg:w-1/2 w-full bg-[#E7E7E7] p-5">
+        <div class="flex flex-col items-center justify-center mb-5">
+          <img src="assets/WebsiteLogo.png" />
+          <p>STAFF SPHERE</p>
+          <p>Your Workforce, Your Cities,</p>
+          <p>One Unified Vision!</p>
+        </div>
+        <div class="w-full ">
+          <img src="assets/Signup1.png" class="w-full h-full border block lg:hidden" />
+        </div>  
+        <div class="">
+          <h2 class="text-center font-bold">Create An account</h2>
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          
+            <div class="grid lg:grid-cols-3 gap-3  my-3">
+            <div class="">
+              <div>
+                <label class="text-lg">First Name*</label>
+              </div>
+              <div class="">
+                <input type="text" formControlName="fname" class="w-full py-2 px-2 rounded-lg text-lg" />
+              </div>
+              <div
+                *ngIf="signupForm.get('fname')?.invalid && signupForm.get('fname')?.touched"
+                style="color: red;"
+              >
+                First Name is required.
+              </div>
+            </div>
+
+            <div class="">
+              <div>
+                <label class="text-lg">Middle Name</label>
+              </div>
+              <div>
+                <input type="text" formControlName="mname" class="w-full  py-2 px-2 rounded-lg text-lg" />
+              </div>
+            </div>
+
+            <div class="">
+              <div>
+                <label class="text-lg">Last Name*</label>
+              </div>
+              <div>
+                <input type="text" formControlName="lname" class="w-full  py-2 px-2 rounded-lg text-lg" />
+              </div>
+              <div
+                *ngIf="signupForm.get('lname')?.invalid && signupForm.get('lname')?.touched"
+                style="color: red;"
+              >
+                Last Name is required.
+              </div>
+            </div>
+
+          </div>
+          
+            <div class="grid lg:grid-cols-3 gap-3 mb-3">
+            <div class="">
+              <div>  <label class="text-lg">Email*</label></div>
+              <div><input type="email" formControlName="email" class="w-full  py-2 px-2 rounded-lg text-lg" /></div>
+              
+              
+              <div
+                *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched"
+                style="color: red;"
+              >
+                Valid Email is required.
+              </div>
+            </div>
+            <div class="">
+              <div>
+              <label class="text-lg">Phone*</label>
+            </div>
+            <div>
+              <input type="tel" formControlName="phone" class="w-full  py-2 px-2 rounded-lg text-lg" />
+            </div>
+              <div
+                *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched"
+                style="color: red;"
+              >
+                Phone is required.
+              </div>
+            </div>
+            <div class="">
+              <div>
+              <label class="text-lg">Job Role*</label>
+            </div>
+            <div>
+              <input type="text" formControlName="jobrole" class="w-full  py-2 px-2 rounded-lg text-lg" />
+            </div>
+              <div
+                *ngIf="signupForm.get('jobrole')?.invalid && signupForm.get('jobrole')?.touched"
+                style="color: red;"
+              >
+                Jobrole is required
+              </div>
+            </div>
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-4 mb-3">
+            <div class="">
+              <div><label class="text-lg">Password*</label>
+                </div>
+                <div>
+              <input type="password" formControlName="password" class="w-full  py-2 px-2 rounded-lg text-lg" />
+              
+              </div>
+
+              <div
+                *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"
+                style="color: red;"
+              >
+                Password is required.
+              </div>
+            </div>
+            <div class="">
+              <div>
+              <label class="text-lg">Confirm Password*</label>
+              </div>
+              <div>
+              <input
+                type="password"
+                formControlName="confirmPassword"
+                class="w-full  py-2 px-2 rounded-lg text-lg"
+              />
+            </div>
+              <div
+                *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched"
+                style="color: red;"
+              >
+                Confirmation Password is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="rounded-lg bg-teal-500 py-2 px-4 mb-3 text-xl"
+            >
+              Signup
+            </button>
+            <p class="text-lg">User Already Exists? <a [routerLink]="['/login']">Login</a></p>
+          </div>
+
+        </form>
+      </div>
+      <div class="w-1/2">
+        <img src="assets/Signup1.png" class="w-full h-full border hidden lg:block" />
+      </div>
+    </div>
+  </div>
+</div>

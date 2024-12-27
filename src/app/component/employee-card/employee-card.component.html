@@ -1,0 +1,20 @@
+<div class="bg-[#f5f9ff] p-4 rounded-lg shadow-md">
+  <div> 
+     <div class="m-2 grid grid-cols-12 gap-4">
+    <div class="col-span-4">
+    <img [src]="employee.image" alt="Profile Picture" class="rounded-lg mb-4 mx-auto h-full">
+  </div>
+  <div class="col-span-8">
+    <h3 class="text-xl font-semibold mb-2">{{ employee.name }}</h3>
+    <p class="text-sm mb-2" >{{ employee.role }}</p>
+    <p class="text-sm mb-2">{{ employee.experience }}</p>
+    <p class="text-sm text-gray-600 mb-2">{{ employee.location }}</p>
+  </div>
+
+  </div>
+</div>
+<div class="m-2">
+  <h2>{{employee.aboutme}}</h2>
+</div>
+
+  </div>
